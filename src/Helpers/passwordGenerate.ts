@@ -1,3 +1,5 @@
+import { LOWER_LETTERS, NUMBERS, SYMBOLS, UPPER_LETTERS } from "../Constants";
+
 export interface PasswordConfig {
   upperLetters: boolean;
   lowerLetters: boolean;
@@ -8,10 +10,10 @@ export interface PasswordConfig {
 
 export const generatePassword = (config: PasswordConfig) => {
   let charset = "";
-  if (config.upperLetters) charset += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  if (config.lowerLetters) charset += "abcdefghijklmnopqrstuvwxyz";
-  if (config.numbers) charset += "0123456789";
-  if (config.symbols) charset += "!@#$%^&*()_+~?";
+  if (config.upperLetters) charset += UPPER_LETTERS;
+  if (config.lowerLetters) charset += LOWER_LETTERS;
+  if (config.numbers) charset += NUMBERS;
+  if (config.symbols) charset += SYMBOLS;
 
   let password = "";
 

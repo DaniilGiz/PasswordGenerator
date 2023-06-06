@@ -1,0 +1,85 @@
+.wrapper_calculator
+  display: flex
+  align-items: center
+  flex-direction: column
+  row-gap: 3rem
+  color: #fff
+  &:focus-visible 
+    outline: -webkit-focus-ring-color auto 0px
+
+.calc
+  width: 100%
+  max-width: 600px
+  padding: .8rem
+  border-radius: 8px
+  background: #000
+  text-align: center
+
+  display: grid
+  grid-template-columns: repeat(4, 1fr)
+  grid-template-rows: repeat(6, 70px)
+
+  & button
+    width: 100%
+    height: 100%
+    outline: none
+    border: none
+    background-color: transparent
+    color: #fff
+    cursor: pointer
+    transition: backdrop-filter .3s
+    font-size: 16px
+    font-weight: 600
+    &:hover
+      backdrop-filter: brightness(1.2)
+    &:active
+      backdrop-filter: brightness(0.8)
+
+
+  & > div
+    border: 1px solid
+    border-radius: 5px
+    display: flex
+    justify-content: end
+    align-items: center
+
+  &_display
+    padding: 0 10px
+    grid-column: 1 / -1
+    p
+      font-size: 60px
+      line-height: 1
+  
+  &_num
+    background-color: #252525
+    & button
+      &:hover
+        backdrop-filter: brightness(1.6)
+      &:active
+        backdrop-filter: brightness(0.6)
+        
+  &_dote
+    background-color: #252525
+
+  &_num.zero
+    grid-column: 1 / 3
+
+  &_grey
+    background-color: #949494
+
+  &_divide
+    grid-row: 2
+  &_multiply
+    grid-row: 3
+  &_minus
+    grid-row: 4
+  &_plus
+    grid-row: 5
+  &_equals
+    grid-row: 6
+  &_refresh
+    grid-column: 1 / 3
+
+  & .operator
+    background-color: #ed901d
+    grid-column: 4 / 5
